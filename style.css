@@ -1,0 +1,61 @@
+body{
+    display: flex;
+    height: 100vw;
+    justify-content: space-between;
+    flex-direction: column;
+    margin:0px;
+}
+
+#footer{
+    background-color: blue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+/*less important stuff is up there*/
+
+
+/*basic calculator look*/
+#calculator{
+    display: grid;
+    width: 350px;
+    height: 500px;
+    /*now the grid part*/
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "input input input delete"
+    "numbers numbers numbers operation"
+    "numbers numbers numbers operation"
+    "numbers numbers numbers operation"
+    "zeroDot zeroDot zeroDot equals";
+}
+
+#inputSpace{
+    grid-area: input;
+}
+#operationSigns{
+    display: grid;
+    grid-area: operation;
+}
+#numberButtons{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-area: numbers;
+}
+#nextToEquals{
+    grid-area: zeroDot;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+#equals{
+    grid-area: equals;
+}
+
+#delete{
+    grid-area: delete;
+}
+/*basic calculator look*/
