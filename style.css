@@ -26,7 +26,7 @@ body{
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
-    "input input input delete"
+    "viewStuff viewStuff viewStuff delete"
     "numbers numbers numbers operation"
     "numbers numbers numbers operation"
     "numbers numbers numbers operation"
@@ -57,5 +57,26 @@ body{
 
 #delete{
     grid-area: delete;
+}
+
+#firstPara{
+    grid-area: firstPara;
+    height: 45px;
+    margin: 0;
+}
+#secondPara{
+    grid-area: secondPara;
+    height: 45px;
+    margin: 0;
+}
+#calcSign{
+    grid-area: calcsign;
+    height: 15px;
+    margin: 0;
+}
+
+
+#viewStuff{
+    grid-area: viewStuff;
 }
 /*basic calculator look*/
