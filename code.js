@@ -2,8 +2,12 @@ let mainpara = document.getElementById("firstPara")
 let scndpara = document.getElementById("secondPara")
 let theSign = document.getElementById("calcSign")
 
-let deleteBtn = document.getElementById("delete")
-deleteBtn.addEventListener("click", deleteAll)
+let ClearBtn = document.getElementById("clear")
+ClearBtn.addEventListener("click", ()=>{
+    mainpara.textContent = "";
+    scndpara.textContent = "";
+    theSign.textContent = "";
+})
 
 
 let calculator = document.getElementById("calculator")
@@ -140,8 +144,19 @@ function equalize(){
         }
     }/*calculates the numbers and outputs stuff into main para*/
 }
-function deleteAll(){
-    mainpara.textContent = "";
-    scndpara.textContent = "";
-    theSign.textContent = "";
-}/*cleans up the whole thing*/
+
+let DelBtn = document.getElementById("delete")
+
+DelBtn.addEventListener("click", ()=>{
+    if(scndpara.textContent ===""){
+        whatWeDo = ""
+        theSign.textContent = ""
+        scndpara.textContent = mainpara.textContent
+        mainpara.textContent = ""
+    }else{
+    let nums = scndpara.textContent.split("")
+    nums.pop()
+    nums = nums.join("")
+    scndpara.textContent = nums;
+    }
+})

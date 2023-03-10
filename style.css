@@ -26,7 +26,7 @@ body{
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
-    "viewStuff viewStuff viewStuff delete"
+    "viewStuff viewStuff viewStuff revdel"
     "numbers numbers numbers operation"
     "numbers numbers numbers operation"
     "numbers numbers numbers operation"
@@ -55,10 +55,6 @@ body{
     grid-area: equals;
 }
 
-#delete{
-    grid-area: delete;
-}
-
 #firstPara{
     grid-area: firstPara;
     height: 45px;
@@ -74,9 +70,12 @@ body{
     height: 15px;
     margin: 0;
 }
-
-
 #viewStuff{
     grid-area: viewStuff;
+}
+#RevDel{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 /*basic calculator look*/
