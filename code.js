@@ -25,7 +25,8 @@ calculator.addEventListener("click", (e)=>{
 
 
 let thePlusbtn = document.getElementById("plus")
-thePlusbtn.addEventListener("click", ()=>{
+thePlusbtn.addEventListener("click", theAddition)
+function theAddition(){
     if(mainpara.textContent!="" && scndpara.textContent!=""){
         equalize();
         theSign.textContent = "+"
@@ -40,9 +41,10 @@ thePlusbtn.addEventListener("click", ()=>{
         scndpara.textContent = "";
         whatWeDo = "adding";
     }
-})
+}
 let theMinusbtn = document.getElementById("minus")
-theMinusbtn.addEventListener("click", ()=>{
+theMinusbtn.addEventListener("click", theSubtraction)
+function theSubtraction(){
     if(mainpara.textContent!="" && scndpara.textContent!=""){
         equalize();
         theSign.textContent = "-"
@@ -57,9 +59,10 @@ theMinusbtn.addEventListener("click", ()=>{
         scndpara.textContent = "";
         whatWeDo = "taking";
     }
-})
+}
 let theMultiply = document.getElementById("times")
-theMultiply.addEventListener("click", ()=>{
+theMultiply.addEventListener("click", theMultiplication)
+function theMultiplication(){
     if(mainpara.textContent!="" && scndpara.textContent!=""){
         equalize();
         theSign.textContent = "*"
@@ -74,9 +77,10 @@ theMultiply.addEventListener("click", ()=>{
         scndpara.textContent = "";
         whatWeDo = "multiplying";
     }
-})
+}
 let theDividing = document.getElementById("divide")
-theDividing.addEventListener("click", ()=>{
+theDividing.addEventListener("click", theDivision)
+function theDivision(){
     if(scndpara.textContent==="0"){
         scndpara.textContent = "";
         alert("you can NOT divide by 0, choose other number")
@@ -95,8 +99,7 @@ theDividing.addEventListener("click", ()=>{
         scndpara.textContent = "";
         whatWeDo = "dividing";
     }
-})
-
+}
 let equalBtn = document.getElementById("equals")
 equalBtn.addEventListener("click", equalize)
 
@@ -170,7 +173,8 @@ function equalize(){
 
 let DelBtn = document.getElementById("delete")
 
-DelBtn.addEventListener("click", ()=>{
+DelBtn.addEventListener("click", theDeleting)
+function theDeleting(){
     if(scndpara.textContent ===""){
         whatWeDo = ""
         theSign.textContent = ""
@@ -182,11 +186,12 @@ DelBtn.addEventListener("click", ()=>{
     nums = nums.join("")
     scndpara.textContent = nums;
     }
-})
+}
 
 let dotBtn = document.getElementById("dot")
 
-dotBtn.addEventListener("click", ()=>{
+dotBtn.addEventListener("click", addingDot)
+function addingDot(){
     if(scndpara.textContent===""){
         alert("You can not add just dot, you have to add a number!")
         alert("Try again!")
@@ -199,4 +204,33 @@ dotBtn.addEventListener("click", ()=>{
             scndpara.textContent += dotBtn.value
         }
     }
+}
+
+/*fully functional calculator*/
+/*do not edit above this line*/
+
+document.addEventListener("keydown", function(e){
+    let pressedKey = e.key;
+    let pressedNum = parseInt(e.key);
+    if(Number.isInteger(pressedNum)){
+        scndpara.textContent += pressedNum;
+    }else{
+        switch(pressedKey){
+            case "+": theAddition()
+            break;
+            case "-": theSubtraction()
+            break;
+            case "*": theMultiplication()
+            break;
+            case "/": theDivision()
+            break;
+            case "Enter": equalize()
+            break;
+            case "Backspace": theDeleting()
+            break;
+            case ".": addingDot()
+            break;
+        }
+    }
 })
+
