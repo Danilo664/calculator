@@ -3,11 +3,12 @@ let scndpara = document.getElementById("secondPara")
 let theSign = document.getElementById("calcSign")
 
 let ClearBtn = document.getElementById("clear")
-ClearBtn.addEventListener("click", ()=>{
+ClearBtn.addEventListener("click", clearing)
+function clearing(){
     mainpara.textContent = "";
     scndpara.textContent = "";
     theSign.textContent = "";
-})
+}
 
 
 let calculator = document.getElementById("calculator")
@@ -229,6 +230,8 @@ document.addEventListener("keydown", function(e){
             case "Backspace": theDeleting()
             break;
             case ".": addingDot()
+            break;
+            case "Delete": clearing()
             break;
         }
     }
