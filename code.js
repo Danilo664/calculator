@@ -233,6 +233,7 @@ document.addEventListener("keydown", function(e){
             break;
             case "Delete": clearing()
             break;
+            
         }
     }
 })
